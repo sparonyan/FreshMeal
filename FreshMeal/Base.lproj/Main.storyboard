@@ -366,7 +366,6 @@
                         <outlet property="caloriesTextField" destination="z27-QG-47T" id="KyX-Kq-jD9"/>
                         <outlet property="ingredientsTextView" destination="IaD-qp-ODZ" id="vTH-u7-65H"/>
                         <outlet property="nameTextField" destination="ZyR-gE-dOP" id="0QA-X0-BQF"/>
-                        <outlet property="nameView" destination="U8E-tl-QEe" id="NjR-VZ-lOD"/>
                         <outlet property="photoImageView" destination="KYl-Cw-2iM" id="beR-fP-5uK"/>
                         <outlet property="prepTimeHourTextField" destination="UFI-gx-xPX" id="EyP-WC-9NY"/>
                         <outlet property="prepTimeMinsTextField" destination="Vlc-Qm-Xlk" id="uCr-jX-Ihp"/>
