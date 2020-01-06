@@ -51,6 +51,22 @@ class MealViewController: UIViewController, UITextFieldDelegate,
         ingredientsTextView.delegate = self as? UITextViewDelegate
         prepTimeMinsTextField.delegate = self
 
+        
+        // Set up views if editing an existing Meal.
+        if let meal = meal {
+            navigationItem.title = meal.name
+            nameTextField.text = meal.name
+            photoImageView.image = meal.photo
+            servingTextField.text = "\(String(describing: meal.serving))"
+            prepTimeHourTextField.text = "\(String(describing: meal.prepHour))"
+            prepTimeMinsTextField.text = "\(String(describing: meal.prepMins))"
+            totalTimeHourTextField.text = "\(String(describing: meal.totalHour))"
+            totalTimeMinsTextField.text = "\(String(describing: meal.totalMins))"
+            caloriesTextField.text = "\(String(describing: meal.calories))"
+            ingredientsTextView.text = meal.ingredients
+            preparationTextView.text = meal.preparation
+        }
+        
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
     }

@@ -136,6 +136,7 @@
                                     <outlet property="prepLabel" destination="q06-ga-5WQ" id="WAc-Lh-joj"/>
                                     <outlet property="totalImageView" destination="oKi-Z2-dmk" id="qNg-vl-Hgq"/>
                                     <outlet property="totalLabel" destination="Zq4-5J-xGU" id="2vU-vz-ObO"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="pj2-IV-irg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -161,7 +162,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="FreshMeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1946"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Y6-xw-0cG">
@@ -171,12 +172,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="415" height="1890"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZyR-gE-dOP">
-                                                <rect key="frame" x="8" y="15" width="399" height="34"/>
+                                                <rect key="frame" x="8" y="37" width="399" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="KYl-Cw-2iM">
-                                                <rect key="frame" x="8" y="57" width="399" height="399"/>
+                                                <rect key="frame" x="8" y="79" width="399" height="399"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="KYl-Cw-2iM" secondAttribute="height" multiplier="1:1" id="cpH-d7-X2l"/>
@@ -186,67 +187,67 @@
                                                 </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SERVING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBm-1h-geG">
-                                                <rect key="frame" x="8" y="464" width="70.5" height="34"/>
+                                                <rect key="frame" x="8" y="486" width="70.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREP TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APh-CZ-F3q">
-                                                <rect key="frame" x="8" y="506" width="85" height="34"/>
+                                                <rect key="frame" x="8" y="528" width="85" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="hour" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFI-gx-xPX" userLabel="Prep Hour Text Field">
-                                                <rect key="frame" x="101" y="506" width="147" height="34"/>
+                                                <rect key="frame" x="101" y="528" width="147" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="minute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vlc-Qm-Xlk" userLabel="Prep Mins Text Field">
-                                                <rect key="frame" x="256" y="506" width="151" height="34"/>
+                                                <rect key="frame" x="256" y="528" width="151" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e73-nu-kDY">
-                                                <rect key="frame" x="8" y="548" width="95" height="34"/>
+                                                <rect key="frame" x="8" y="570" width="95" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="hour" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7zI-F1-mZ4" userLabel="Total Hour Text Field">
-                                                <rect key="frame" x="111" y="548" width="137" height="34"/>
+                                                <rect key="frame" x="111" y="570" width="137" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="minute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qxj-N8-nrK" userLabel="Total Mins Text Field">
-                                                <rect key="frame" x="256" y="548" width="151" height="34"/>
+                                                <rect key="frame" x="256" y="570" width="151" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z27-QG-47T">
-                                                <rect key="frame" x="96" y="590" width="311" height="34"/>
+                                                <rect key="frame" x="96" y="612" width="311" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d46-Zc-gXf" userLabel="Serving Text Field">
-                                                <rect key="frame" x="86.5" y="464" width="320.5" height="34"/>
+                                                <rect key="frame" x="86.5" y="486" width="320.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALORIES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnO-gd-Wbu">
-                                                <rect key="frame" x="8" y="590" width="80" height="34"/>
+                                                <rect key="frame" x="8" y="612" width="80" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INGREDIENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdr-A2-Nlk">
-                                                <rect key="frame" x="8" y="659" width="407" height="21"/>
+                                                <rect key="frame" x="8" y="681" width="407" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IaD-qp-ODZ" userLabel="Ingredients View">
-                                                <rect key="frame" x="8" y="688" width="399" height="280"/>
+                                                <rect key="frame" x="8" y="710" width="399" height="280"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="280" id="4FL-Kw-J00"/>
@@ -257,7 +258,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREPARATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KO0-5Q-5vs">
-                                                <rect key="frame" x="8" y="1003" width="407" height="21"/>
+                                                <rect key="frame" x="8" y="1025" width="407" height="21"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -267,7 +268,7 @@
                                                 </connections>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y25-Wt-gdG" userLabel="Prep View">
-                                                <rect key="frame" x="8" y="1032" width="399" height="830"/>
+                                                <rect key="frame" x="8" y="1054" width="399" height="830"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="830" id="IeL-EB-Log"/>
@@ -428,7 +429,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCk-5a-PVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="-232"/>
+            <point key="canvasLocation" x="568" y="357"/>
         </scene>
     </scenes>
     <resources>
@@ -437,4 +438,7 @@
         <image name="knife" width="341" height="341"/>
         <image name="scale" width="341" height="341"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pj2-IV-irg"/>
+    </inferredMetricsTieBreakers>
 </document>
