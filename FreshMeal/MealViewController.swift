@@ -24,8 +24,13 @@ class MealViewController: UIViewController, UITextFieldDelegate,
     @IBOutlet weak var caloriesTextField: UITextField!
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var preparationTextView: UITextView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    
+    /*
+     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
+     or constructed as part of adding a new meal.
+     */
+    var meal: Meal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +93,37 @@ class MealViewController: UIViewController, UITextFieldDelegate,
         dismiss(animated: true, completion: nil)
     }
     
+    //MARK: Navigation
+    // This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let name = nameTextField.text ?? ""
+        let photo = photoImageView.image
+        let serving = Int(servingTextField.text ?? "") ?? 0
+        let prepHour = Int(prepTimeHourTextField.text ?? "") ?? 0
+        let prepMins = Int(prepTimeMinsTextField.text ?? "") ?? 0
+        let totalHour = Int(totalTimeHourTextField.text ?? "") ?? 0
+        let totalMins = Int(totalTimeMinsTextField.text ?? "") ?? 0
+        let calories = Int(caloriesTextField.text ?? "") ?? 0
+        let ingredients = ingredientsTextView.text ?? ""
+        let preparation = preparationTextView.text ?? ""
+        
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        /*
+         init?(name: String, photo: UIImage?, serving: Int?, prepHour: Int?, prepMins: Int?,
+         totalHour: Int?, totalMins: Int?, calories: Int?, ingregients: String, preparation: String?) {
+         */
+        meal = Meal(name: name, photo: photo, serving: serving, prepHour: prepHour, prepMins: prepMins,
+                    totalHour: totalHour, totalMins: totalMins, calories: calories, ingregients: ingredients,
+                    preparation: preparation)
+    }
     
     //MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
