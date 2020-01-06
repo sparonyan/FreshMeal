@@ -11,9 +11,9 @@ import os.log
 
 class MealViewController: UIViewController, UITextFieldDelegate,
                 UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    //MARK: Properties
-  
     
+  
+    //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var servingTextField: UITextField!
@@ -51,6 +51,8 @@ class MealViewController: UIViewController, UITextFieldDelegate,
         ingredientsTextView.delegate = self as? UITextViewDelegate
         prepTimeMinsTextField.delegate = self
 
+        // Enable the Save button only if the text field has a valid Meal name.
+        updateSaveButtonState()
     }
 
 
@@ -63,13 +65,11 @@ class MealViewController: UIViewController, UITextFieldDelegate,
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Disable the Save button while editing.
-        
-        //saveButton.isEnabled = false
+        saveButton.isEnabled = false
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        //updateSaveButtonState()
+        updateSaveButtonState()
         navigationItem.title = textField.text
     }
     
@@ -149,5 +149,12 @@ class MealViewController: UIViewController, UITextFieldDelegate,
         present(imagePickerController, animated: true, completion: nil)
     }
     
+    
+    //MARK: Private Methods
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
+    }
 }
 
