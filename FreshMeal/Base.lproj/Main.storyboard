@@ -358,7 +358,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Recipe" id="iin-vU-OYl">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="81O-Pp-yvE"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="81O-Pp-yvE">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="13Y-fJ-I4i"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="SjT-KH-rUb">
                             <connections>
                                 <segue destination="GfU-Cj-I96" kind="unwind" unwindAction="unwindToMealListWithSender:" id="YdQ-3e-2zh"/>
